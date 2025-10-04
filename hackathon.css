@@ -1,0 +1,68 @@
+:root{
+      --bg-1:#05021c;
+      --bg-2:#0b1020;
+      --card:#0f1724;
+      --muted:#9aa6bd;
+      --accent:#6d28d9;
+      --accent2:#06b6d4;
+      --glass: rgba(255,255,255,0.03);
+      --white:#e6eef8;
+      --success:#10b981;
+      --danger:#ef4444;
+      --radius:12px;
+      --transition:200ms;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html,body { height:100%; margin:0; background: linear-gradient(135deg,var(--bg-1),var(--bg-2)); color:var(--white); -webkit-font-smoothing:antialiased; }
+    .wrap{ max-width:1100px; margin:28px auto; padding:18px; }
+    header { display:flex; gap:14px; align-items:center; margin-bottom:18px; }
+    .logo { width:56px; height:56px; border-radius:14px; background:linear-gradient(180deg,var(--accent),var(--accent2)); display:flex; align-items:center; justify-content:center; font-weight:800; color:white; font-size:20px; box-shadow:0 12px 30px rgba(7,10,30,0.6); }
+    h1 { font-size:20px; margin:0; }
+    p.lead { margin:0; color:var(--muted); font-size:13px; }
+
+    .controls { display:flex; gap:10px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+    label.sr { position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+    .input {
+      display:flex; gap:8px; align-items:center;
+      background:var(--glass); padding:8px; border-radius:10px; border:1px solid rgba(255,255,255,0.04);
+    }
+    .input input[type="text"]{
+      border:0; background:transparent; color:var(--white); padding:8px; font-size:14px; outline:none; min-width:220px;
+    }
+    .input input[type="text"]::placeholder{ color: rgba(255,255,255,0.4); }
+
+    button.primary { background:linear-gradient(90deg,var(--accent),var(--accent2)); color:white; padding:9px 14px; border-radius:10px; border:none; cursor:pointer; font-weight:700; transition:all var(--transition); }
+    button.ghost { background:transparent; border:1px solid rgba(255,255,255,0.05); color:var(--muted); padding:8px 12px; border-radius:10px; cursor:pointer; }
+    button:disabled { opacity:0.6; cursor:not-allowed; }
+
+    .grid { display:grid; grid-template-columns:1fr 360px; gap:18px; margin-top:18px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:16px; box-shadow:0 8px 26px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); }
+    .summary { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .card-mini { flex:1; min-width:140px; padding:12px; border-radius:10px; background:rgba(255,255,255,0.02); text-align:center; transition:transform var(--transition); }
+    .card-mini:hover { transform:translateY(-6px); }
+    .card-mini .title { font-size:12px; color:var(--muted); }
+    .card-mini .value { font-size:20px; font-weight:700; margin-top:6px; }
+
+    .charts { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+    .chart-box { background:transparent; border-radius:8px; padding:8px; }
+    .chart-title { margin:0 0 8px 0; font-size:14px; }
+
+    ul.issue-list { list-style:none; padding:0; margin:0; max-height:260px; overflow:auto; }
+    ul.issue-list li { padding:10px; border-radius:8px; background:rgba(255,255,255,0.02); margin-bottom:8px; cursor:pointer; border:1px solid rgba(255,255,255,0.02); transition:background var(--transition); }
+    ul.issue-list li:hover { background:rgba(255,255,255,0.035); }
+
+    .muted { color:var(--muted); font-size:13px; }
+    .small { font-size:13px; padding:7px 10px; border-radius:8px; }
+    .export-toast { position:fixed; right:18px; bottom:18px; background:rgba(0,0,0,0.6); color:var(--white); padding:10px 12px; border-radius:8px; box-shadow:0 6px 20px rgba(0,0,0,0.6); display:none; }
+
+    /* skeleton */
+    .skeleton { background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius:8px; min-height:18px; animation: shimmer 1.2s linear infinite; }
+    @keyframes shimmer { 0% { background-position:-200px 0; } 100% { background-position:200px 0; } }
+
+    @media (max-width:980px) {
+      .grid { grid-template-columns: 1fr; }
+      .logo { width:48px; height:48px; }
+      .charts { grid-template-columns: 1fr; }
+    }
